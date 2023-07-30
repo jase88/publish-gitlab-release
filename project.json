@@ -11,8 +11,8 @@
       "options": {
         "platform": "node",
         "outputPath": "dist/publish-gitlab-release",
-        "format": ["cjs"],
-        "bundle": false,
+        "format": ["esm"],
+        "bundle": true,
         "main": "src/main.ts",
         "tsConfig": "tsconfig.app.json",
         "assets": [],
