@@ -1,16 +1,16 @@
 {
   "root": true,
   "ignorePatterns": ["!**/*"],
-  "plugins": ["@nx"],
+  "plugins": ["@nx", "unicorn"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
+      "extends": ["plugin:@nx/typescript", "plugin:unicorn/recommended"],
       "rules": {}
     },
     {
       "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nx/javascript"],
+      "extends": ["plugin:@nx/javascript", "plugin:unicorn/recommended"],
       "rules": {}
     },
     {
