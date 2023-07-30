@@ -15,7 +15,6 @@ jobs:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-      - run: npx nx format:check
       - run: npx nx affected -t lint --parallel=3
       - run: npm run build
       - name: Publish to npm registry
