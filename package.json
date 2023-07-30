@@ -12,7 +12,6 @@
     "test": "nx test",
     "format": "nx format:check"
   },
-  "private": true,
   "bin": {
     "publish-gitlab-release": "./main.js"
   },
