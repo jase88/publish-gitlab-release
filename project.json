@@ -15,7 +15,7 @@
         "bundle": true,
         "main": "src/main.ts",
         "tsConfig": "tsconfig.app.json",
-        "assets": [],
+        "assets": ["README.md"],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
