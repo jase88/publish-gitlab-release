@@ -13,7 +13,7 @@
   },
   "private": true,
   "bin": {
-    "gitlab-release-publisher": "./main.js"
+    "publish-gitlab-release": "./main.js"
   },
   "type": "module",
   "dependencies": {
