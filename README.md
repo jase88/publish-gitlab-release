@@ -1,24 +1,22 @@
 # publish-gitlab-release
 
-`publish-gitlab-release` is a CLI tool designed to streamline the process of creating a Git tag and a corresponding GitLab release.
+`publish-gitlab-release` is a command-line tool designed to simplify the process of creating a Git tag and a corresponding GitLab release.
 
-It automates the collection of commits since the last tag, as well as all associated _merge requests_ and their linked _issues_.
-
-The tool also facilitates adding comments to merge requests and their linked issues, providing better visibility into the changes included in each release.
+The tool automates the collection of commits made since the last tag, along with all associated merge requests and their linked issues.
+It also adds comments to merge requests and their linked issues, providing better visibility into the changes included in each release.
 Additionally, it generates a basic changelog based on raw commit messages.
 
-These features are all also available in tools like [semantic release](https://github.com/semantic-release/semantic-release), but the difference is that those enforce you to use semantiv versioning.
-This tool doesn't care about your versioning scheme and only works for Gitlab via their API.
+Unlike some other tools like [semantic release](https://github.com/semantic-release/semantic-release), `publish-gitlab-release` doesn't enforce a specific versioning scheme. It is flexible and works exclusively with GitLab via their API.
 
 ## 🌟 Features
 
-- Create a git tag and publish a gitlab release
-- Release comment on Merge Requests and their linked issues
-- Basic Changelog on Gitlab Release
+- Create a Git tag and publish a GitLab release with a single command.
+- Automatically add comments to Merge Requests and their linked issues for better visibility.
+- Generate a basic changelog for the GitLab release.
 
 ## 🚀 Usage
 
-To use publish-gitlab-release, you can easily invoke it with npx as follows:
+To use `publish-gitlab-release`, invoke it using npx with the desired version number:
 
 ```bash
 npx publish-gitlab-release -v "1.2.3" [options]
@@ -50,3 +48,4 @@ Gitlab project ID. Use this option to specify the ID of the Gitlab project where
 
 - Node 18 (or higher)
 - Gitlab
+- Your latest Git tag is always the tag since last release
