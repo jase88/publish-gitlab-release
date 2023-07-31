@@ -36,7 +36,7 @@ Specifies the version name to be used for the Git tag and the Gitlab release. Th
 
 #### `-t, --token` _(optional)_
 
-Gitlab API token. If provided, the tool will use this token to authenticate with Gitlab when creating the release. If not provided, the tool will attempt to use the environment variable `GITLAB_PROJECT_TOKEN` within Gitlab pipelines.
+Gitlab API token. If provided, the tool will use this token to authenticate with Gitlab when creating the release. If not provided, the tool will attempt to use the environment variable `CI_JOB_TOKEN` within Gitlab pipelines.
 
 #### `--ref` _(optional)_
 

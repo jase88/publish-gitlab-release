@@ -1,6 +1,6 @@
 {
   "name": "publish-gitlab-release",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "publish-gitlab-release is a command-line tool that automates the process of creating GitLab releases, including generating changelogs, adding comments to merge requests and linked issues, all while providing flexibility in versioning schemes.",
   "license": "MIT",
   "repository": "https://github.com/jase88/publish-gitlab-release",
