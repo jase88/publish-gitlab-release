@@ -1,4 +1,4 @@
-import { Gitlab } from '@gitbeaker/node';
+import { Gitlab } from '@gitbeaker/rest';
 
 export type GitlabApi = InstanceType<typeof Gitlab<false>>;
 export type GitlabProjectId = number;

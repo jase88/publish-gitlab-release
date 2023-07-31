@@ -4,7 +4,7 @@ export async function getRelatedMergedMergeRequests(
   hash: string,
   projectId: GitlabProjectId
 ): Promise<MergeRequest[]> {
-  const mergeRequests = await Commits.mergeRequests(projectId, hash);
+  const mergeRequests = await Commits.allMergeRequests(projectId, hash);
   return mergeRequests
     .filter(({ state }) => state === 'merged')
     .map(({ project_id, iid }) => ({ project_id, iid }));
@@ -14,7 +14,7 @@ export async function getRelatedIssuesForMergeRequest(
   { MergeRequests }: GitlabApi,
   { project_id, iid }: MergeRequest
 ): Promise<Issue[]> {
-  const mergeRequests = await MergeRequests.closesIssues(project_id, iid);
+  const mergeRequests = await MergeRequests.allIssuesClosed(project_id, iid);
   return mergeRequests.map(({ project_id, iid }) => ({ project_id, iid }));
 }
 

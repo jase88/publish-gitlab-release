@@ -37,7 +37,7 @@ export async function getCommitsSinceLastTag(
 }
 
 export async function createReleaseTag(
-  { Tags, Releases }: GitlabApi,
+  { Tags, ProjectReleases }: GitlabApi,
   reference: string,
   titles: string[],
   version: string,
@@ -47,7 +47,7 @@ export async function createReleaseTag(
   const description = '## Changes\n\n' + message;
 
   await Tags.create(projectId, version, reference, { message });
-  return Releases.create(projectId, {
+  return ProjectReleases.create(projectId, {
     name: version,
     tag_name: version,
     description,

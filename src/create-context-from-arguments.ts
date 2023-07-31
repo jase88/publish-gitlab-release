@@ -1,6 +1,6 @@
 import { parseArgs } from 'node:util';
 import { env, exit } from 'node:process';
-import { Gitlab } from '@gitbeaker/node';
+import { Gitlab } from '@gitbeaker/rest';
 import { Context } from './types';
 
 export function validateArguments({ version, token, projectId, ref, host }) {
