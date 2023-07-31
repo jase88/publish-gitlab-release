@@ -14,6 +14,12 @@ Unlike some other tools like [semantic release](https://github.com/semantic-rele
 - Automatically add comments to Merge Requests and their linked issues for better visibility.
 - Generate a basic changelog for the GitLab release.
 
+## 🧰 Requirements
+
+- Node 18 (or higher)
+- Gitlab
+- Your latest Git tag is always the tag since last release
+
 ## 🚀 Usage
 
 To use `publish-gitlab-release`, invoke it using npx with the desired version number:
@@ -44,8 +50,8 @@ Gitlab URI. Use this option to specify a custom Gitlab host URL. Within Gitlab p
 
 Gitlab project ID. Use this option to specify the ID of the Gitlab project where the release should be published. If not provided, the tool will use the given variable `CI_PROJECT_ID` from Gitlab pipelines.
 
-## 🧰 Requirements
+## 👏 Credits
 
-- Node 18 (or higher)
-- Gitlab
-- Your latest Git tag is always the tag since last release
+- [semantic release](https://github.com/semantic-release/semantic-release) A powerful release publishing tool with extensive plugin support, automating versioning and publishing based on commit history
+- [@gitbeaker/rest](https://www.npmjs.com/package/@gitbeaker/rest) provides typed access to the Gitlab API, enhancing our project's capabilities
+- blog post [Actually you don’t need 'semantic-release' for semantic release](https://dev.to/antongolub/you-don-t-need-semantic-release-sometimes-3k6k) inspired the creation of this tool, tailored to my specific needs
