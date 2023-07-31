@@ -34,9 +34,9 @@ npx publish-gitlab-release -v "1.2.3" [options]
 
 Specifies the version name to be used for the Git tag and the Gitlab release. This option is required and should be used to define the version of the release.
 
-#### `-t, --token` _(optional)_
+#### `-t, --token` _(required)_
 
-Gitlab API token. If provided, the tool will use this token to authenticate with Gitlab when creating the release. If not provided, the tool will attempt to use the environment variable `CI_JOB_TOKEN` within Gitlab pipelines.
+Gitlab API token. Unfortunately the `CI_JOB_TOKEN` has not enough rights, so that a personal access token or a project access token is required. Go to your project settings and then _Access Tokens_. Create a token with the scope _api_.
 
 #### `--ref` _(optional)_
 

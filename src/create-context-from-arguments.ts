@@ -37,7 +37,6 @@ export function createContextFromArguments(): Context {
     CI_SERVER_PROTOCOL,
     CI_SERVER_HOST,
     CI_SERVER_PORT,
-    CI_JOB_TOKEN,
     CI_COMMIT_SHA,
   } = env;
 
@@ -84,7 +83,7 @@ Description:
 
   Options:
     -v, --version <version>   Specifies the version name to be used for the Git tag and the Gitlab release.
-    -t, --token <token>       (Optional) Gitlab API token. If not provided, the tool will attempt to use the environment variable CI_JOB_TOKEN within Gitlab pipelines.
+    -t, --token <token>       Gitlab API token. Personal or project access token.
     --ref <ref>               (Optional) Git ref that should be tagged. If not provided, the tool will use the given environment variable CI_COMMIT_SHA from Gitlab pipelines.
     --host <host>             (Optional) Gitlab URI. If not specified, the tool will default to gitlab.com.
     --project <project_id>    (Optional) Gitlab project ID. If not specified, the tool will use the given variable CI_PROJECT_ID from Gitlab pipelines.
@@ -98,12 +97,17 @@ Description:
       ? `${CI_SERVER_PROTOCOL}://${CI_SERVER_HOST}:${CI_SERVER_PORT}`
       : 'gitlab.com';
   const projectId = Number.parseInt(gitlabProjectId || CI_PROJECT_ID, 10);
-  const token = gitlabToken || CI_JOB_TOKEN;
   const reference = gitReference || CI_COMMIT_SHA;
 
-  validateArguments({ version, token, projectId, ref: reference, host });
+  validateArguments({
+    version,
+    token: gitlabToken,
+    projectId,
+    ref: reference,
+    host,
+  });
 
-  const api = new Gitlab({ host, token });
+  const api = new Gitlab({ host, token: gitlabToken });
 
   return { api, host, projectId, version, reference };
 }
