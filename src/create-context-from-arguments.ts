@@ -12,7 +12,7 @@ export function validateArguments({ version, token, projectId, ref, host }) {
 
   if (!token) {
     throw new Error(
-      `No valid token found - please make sure to pass in a token or set the environment variable "GITLAB_PROJECT_TOKEN"`
+      `No valid token found - please make sure to pass in a token`
     );
   }
 

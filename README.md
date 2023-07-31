@@ -36,7 +36,7 @@ Specifies the version name to be used for the Git tag and the Gitlab release. Th
 
 #### `-t, --token` _(required)_
 
-Gitlab API token. Unfortunately the `CI_JOB_TOKEN` has not enough rights, so that a personal access token or a project access token is required. Go to your project settings and then _Access Tokens_. Create a token with the scope _api_.
+Gitlab API token. Unfortunately the `CI_JOB_TOKEN` has not enough rights, so that a personal access token or a project access token is required. Go to your project settings and then _Access Tokens_. Create a token with the scope _api_ and add it to _variables_ under the section _CI/CD_.
 
 #### `--ref` _(optional)_
 
