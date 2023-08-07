@@ -61,6 +61,9 @@ publish-release:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_COMMIT_TAG == null'
 ```
 
+![Gitlab comment on a issue referring to a Gitlab release](./docs/issue-comment.png 'Gitlab comment on a issue')
+![Gitlab comment on a merge request referring to a Gitlab release](./docs/issue-merge-request.png 'Gitlab comment on a merge request')
+
 ## 👏 Credits
 
 - [semantic release](https://github.com/semantic-release/semantic-release) A powerful release publishing tool with extensive plugin support, automating versioning and publishing based on commit history
