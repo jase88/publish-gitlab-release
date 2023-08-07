@@ -50,6 +50,17 @@ Gitlab URI. Use this option to specify a custom Gitlab host URL. Within Gitlab p
 
 Gitlab project ID. Use this option to specify the ID of the Gitlab project where the release should be published. If not provided, the tool will use the given variable `CI_PROJECT_ID` from Gitlab pipelines.
 
+## 💻 CI example
+
+```yml
+publish-release:
+  image: node:20.4.0
+  script:
+    - npx publish-gitlab-release --version "$VERSION" --token "$GITLAB_RELEASE_TOKEN"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_COMMIT_TAG == null'
+```
+
 ## 👏 Credits
 
 - [semantic release](https://github.com/semantic-release/semantic-release) A powerful release publishing tool with extensive plugin support, automating versioning and publishing based on commit history
